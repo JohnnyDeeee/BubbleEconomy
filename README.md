@@ -32,3 +32,22 @@ It can be influenced by the amount of working- / non-working population.<br>
 If the Economy is doing well, the City will attract populations from other Cities.<br>
 These new populations will be first added to the non-working population and have a chance to be added to the working population if there is room.<br>
 Also, if the Economy is doing 'too well', it will 'give' it's excess 'economy' to it's neighbouring cities.<br>
+
+## Version 1
+[demo version 1](https://i.imgur.com/iNCG6Sv.gifv)<br>
+What you see in version 1 is nothing special..<br>
+Cities do well with a high amount of workers (as expected)<br>
+But the non-workers don't really affect the economy that much..<br>
+Once you increase the neighbour range, you'll see that everyone shares and all do good (but the economies are not exactly the same)<br>
+### Features
+Every tick<br>
+- `economy -= nonWorkingPopulation * 0.01f;`<br>
+- `economy += workingPopulation * 0.1f;`<br>
+- `economy = economy > 0 ? economy - 0.1f : 0;`<br>
+- Chance that a working/non-working will leave: **20%**<br>
+  They will move to the City with the heighest Economy<br>
+- Chance that a non-working will work: **40%**<br>
+
+red: amount of nonworking<br>
+green: amount of economy<br>
+blue: range in which this city can find neighbours<br>
